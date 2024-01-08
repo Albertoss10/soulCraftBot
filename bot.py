@@ -37,7 +37,7 @@ async def ban(ctx, username: str):
     
     if files:
         auth_data = {'username': username}
-        url = 'https://sa.playsoulcraft.net/user/executeBan'
+        url = 'http://127.0.0.1/user/executeBan'
         resp = requests.post(url, data=auth_data, files=files)
         print(resp)
     else:
