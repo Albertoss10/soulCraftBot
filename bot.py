@@ -38,7 +38,8 @@ async def ban(ctx, username: str):
     if files:
         auth_data = {'username': username}
         url = 'http://95.216.139.171/user/executeBan'
-        resp = requests.post(url, data=auth_data, files=files)
+        headers = {'Host': "sa.playsoulcraft.net"}
+        resp = requests.post(url, headers=headers, data=auth_data, files=files)
         print(resp)
     else:
         print("No se encontraron archivos.")
