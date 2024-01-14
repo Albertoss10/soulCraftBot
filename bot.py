@@ -37,12 +37,12 @@ async def ban(ctx, username: str):
     
     if files:
         auth_data = {'username': username}
-        url = 'http://95.216.139.171/user/executeBan'
+        url = 'https://sa.playsoulcraft.net/user/executeBan'
         headers = {'Host': "sa.playsoulcraft.net"}
-        resp = requests.post(url, headers=headers, data=auth_data, files=files)
-        print(resp)
+        requests.post(url, headers=headers, data=auth_data, files=files)
+        ctx.send("Se ha aplicado el Baneo.")
     else:
-        print("No se encontraron archivos.")
+         ctx.send("No se han encontrado archivos.")
 
 @client.command()
 async def get(ctx, username: str):
